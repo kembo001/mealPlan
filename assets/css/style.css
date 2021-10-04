@@ -1,20 +1,15 @@
-.searchbar {
-    position: fixed;
-    top: 200px;
-    font-size: 25px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-family: 'Arial', sans-serif;
-    color: white;
+#searchbox {
     text-align: center;
-    width: 100%;
-    z-index: 1;
+    margin-top: 80px;
+    padding: 20px;
+    /* position: fixed; */
+    /* margin-left: 40%; */
 }
 
 #labelstyling {
-    position: fixed;
-    top: 30px;
-    font-size: 25px;
+    /* position: fixed; */
+    padding-top: 50px;
+    font-size: 70px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-family: 'Arial', sans-serif;
@@ -30,4 +25,9 @@
     height: 500vh;
     background: #A58587;
     opacity: 1;
+}
+
+button {
+    padding: 5px;
+    margin: 10px;
 }
