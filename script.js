@@ -11,8 +11,20 @@ function getAPI() {
         return response.json();
     })
     .then(function (data) {
-        console.log(data)
+        console.log(data);
+        displayResults(data);
     })
+    
+}
+
+function displayResults (data) {
+    for( i = 0; i < 3; i++) {
+    var resultsContainer = $(".searchResults")
+    var recipeResults = $("<button>")
+    recipeResults = data.results[i].title
+    console.log(recipeResults)
+    resultsContainer.append(recipeResults)
+    }
 }
 
 
