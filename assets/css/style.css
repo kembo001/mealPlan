@@ -2,13 +2,11 @@
     text-align: center;
     margin-top: 80px;
     padding: 20px;
-    /* position: fixed; */
     /* margin-left: 40%; */
 }
 
 #labelstyling {
-    /* position: fixed; */
-    padding-top: 50px;
+    padding-top: 200px;
     font-size: 70px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -28,6 +26,45 @@
 }
 
 button {
-    padding: 5px;
-    margin: 10px;
+    padding: 10px;
+    margin: 20px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'Arial', sans-serif;
+    color: #3C6F6C;
+    opacity: 1;
+    margin-bottom: 80px;
+}
+
+#searchresults {
+    height: 700px;
+    width: 700px;
+    background-color: #EDE7E7;
+    border-radius: 10px;
+    margin-top: 80px;
+    margin-left: 25%;
+}
+
+#chosenrecipe {
+    height: 700px;
+    width: 700px;
+    background-color: #C9B6B7;
+    border-radius: 10px;
+    margin-top: 120px;
+    margin-left: 25%;
+}
+
+h3 {
+    padding: 15px;
+    opacity: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'Arial', sans-serif;
+    color: #3C6F6C;
+    opacity: 1;
+}
+
+.cuisineConfirm {
+    margin-top: 80px;
 }
