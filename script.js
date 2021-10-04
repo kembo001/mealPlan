@@ -1,12 +1,15 @@
-var url = "https://api.spoonacular.com/recipes/716429/information?apiKey=7422e4770d3c4bdbb9679e356fa65ecf&includeNutrition=true"
+
 var confirmButton = $(".cuisineConfirm")
+var cuisineSelection;
 
 confirmButton.on("click", function(){
+    cuisineSelection = $(".form-control").val()
 
-getAPI();    
+getAPI(cuisineSelection);    
 })
 
 function getAPI() {
+    var url = "https://api.spoonacular.com/recipes/complexSearch?cuisine=" + cuisineSelection + "&apiKey=7422e4770d3c4bdbb9679e356fa65ecf";
     fetch(url)
     .then(function (response) {
         return response.json();
