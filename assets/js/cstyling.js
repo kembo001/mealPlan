@@ -4,8 +4,8 @@ var choreographer = new Choreographer({
         selector: '#box',
         type: 'scale',
         style: 'opacity',
-        from: .2,
-        to: 1,
+        from: 1,
+        to: .2,
     }]
 })
 

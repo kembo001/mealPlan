@@ -11,7 +11,7 @@
     z-index: 1;
 }
 
-header {
+#labelstyling {
     position: fixed;
     top: 30px;
     font-size: 25px;
@@ -29,10 +29,5 @@ header {
     width: 100%;
     height: 500vh;
     background: #A58587;
-    opacity: .3;
+    opacity: 1;
 }
-
-
-/* #mainPage {
-    background-color: teal;
-} */
