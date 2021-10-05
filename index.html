@@ -38,12 +38,15 @@
         </div>
     </nav>
     <div id="box">
-        <section id="mainPage">
-            <button class="shoppinglistBtn"> Go to Shopping List</button>
-            <div class="form-group">
-                <label id="labelstyling" for="exampleFormControlSelect1">Pick a cuisine</label>
-                <button class="cuisineConfirm">Confirm Selection</button>
-                <select class="form-control" id="exampleFormControlSelect1">
+        <header>
+            <h1 id="labelstyling">Seach Recipes</h1>
+        </header>
+        <div id="searchbox">
+            <section id="mainPage">
+                <button class="shoppinglistBtn"> Go to Shopping List</button>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1"></label>
+                    <select class="form-control" id="exampleFormControlSelect1">
         <option aria-placeholder="Please pick"></option>
           <option>African</option>
           <option>American</option>
@@ -71,13 +74,21 @@
           <option>Spanish</option>
           <option>Thai</option>
           <option>Vietnamese</option>
+          
         </select>
-            </div>
+                    <button class="cuisineConfirm">Confirm Selection</button>
+                </div>
 
-            <section class="searchResults">Results</section>
-            <section class="selectedRecipe">Chosen Recipe
-                <button class="confirmRecipe">Confirm Recipe</button>
-            </section>
+                <section id="searchresults" class="searchResults">
+                    <h3>Results</h3>
+                </section>
+                <div id="chosenrecipe">
+                    <section class="selectedRecipe">
+                        <h3>chosen recipe</h3>
+                        <button class="confirmRecipe">Confirm Recipe</button>
+                    </section>
+                </div>
+        </div>
     </div>
     <!-- <form class="foodSearch" action="">
         <input type="text"
