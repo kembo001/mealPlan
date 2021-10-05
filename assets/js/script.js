@@ -55,6 +55,7 @@ function getIngredientsApi(recipeId) {
         })
         .then(function(data) {
             console.log(data);
+            $("#recipeIngredients").empty();
             for (i = 0; i < data.ingredients.length; i++) {
                 var recipeList = $("<div>")
                 console.log(data.ingredients[i].name);
