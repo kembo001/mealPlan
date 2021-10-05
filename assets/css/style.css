@@ -37,7 +37,7 @@ button {
 }
 
 #searchresults {
-    height: 700px;
+    min-height: 500px;
     width: 700px;
     background-color: #EDE7E7;
     border-radius: 10px;
@@ -46,18 +46,23 @@ button {
 }
 
 #chosenrecipe {
-    height: 700px;
+    min-height: 500px;
     width: 700px;
-    background-color: #C9B6B7;
+    background-color: #532D2F;
     border-radius: 10px;
     margin-top: 120px;
     margin-left: 25%;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'Arial', sans-serif;
+    color: whitesmoke;
+    opacity: 1;
 }
 
 #recipeIngredients {
-    height: 700px;
+    min-height: min-content;
     width: 700px;
-    background-color: #936D6F;
+    background-color: #1C0F10;
     border-radius: 10px;
     margin-top: 120px;
     margin-left: 25%;
@@ -65,15 +70,9 @@ button {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-family: 'Arial', sans-serif;
-    color: #3C6F6C;
+    color: whitesmoke;
     opacity: 1;
 }
-
-
-/* 
-#recipeIngredients:hover {
-    opacity: 1;
-} */
 
 h3 {
     padding: 15px;
@@ -87,4 +86,21 @@ h3 {
 
 .cuisineConfirm {
     margin-top: 80px;
+}
+
+p {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'Arial', sans-serif;
+    color: black;
+}
+
+.title {
+    padding: 10px;
+    color: #3C6F6C;
+    font-size: 30px;
+}
+
+.instructions {
+    margin: 20px;
 }
