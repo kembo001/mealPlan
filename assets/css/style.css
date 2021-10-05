@@ -54,6 +54,22 @@ button {
     margin-left: 25%;
 }
 
+#recipeIngredients {
+    height: 700px;
+    width: 700px;
+    background-color: #936D6F;
+    border-radius: 10px;
+    margin-top: 120px;
+    margin-left: 25%;
+    opacity: 1;
+}
+
+
+/* 
+#recipeIngredients:hover {
+    opacity: 1;
+} */
+
 h3 {
     padding: 15px;
     opacity: 1;
