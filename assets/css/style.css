@@ -62,6 +62,11 @@ button {
     margin-top: 120px;
     margin-left: 25%;
     opacity: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'Arial', sans-serif;
+    color: #3C6F6C;
+    opacity: 1;
 }
 
 
