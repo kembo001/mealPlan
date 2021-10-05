@@ -5,7 +5,7 @@ var choreographer = new Choreographer({
         type: 'scale',
         style: 'opacity',
         from: 1,
-        to: .2,
+        to: .3,
     }]
 })
 

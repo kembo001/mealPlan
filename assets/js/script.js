@@ -47,11 +47,12 @@ function getRecipeApi(recipeId) {
             $(".selectedRecipe").empty();
             var cardContainer = $(".selectedRecipe");
             var recipeTitle = $("<div>");
+            recipeTitle.addClass("title");
             recipeTitle.text(data.title);
             cardContainer.append(recipeTitle);
-            var recipeImage =
-                $(".selectedRecipe").prepend($('<img>', { id: 'theImg', src: data.image }));
+            var recipeImage = $(".selectedRecipe").append($('<img>', { id: 'theImg', src: data.image }));
             var recipeInstructions = $("<div>");
+            recipeInstructions.addClass("instructions");
             var instructionsUnparsed = JSON.stringify(data.instructions);
             var instructionsParsed = JSON.parse(instructionsUnparsed);
             console.log(instructionsUnparsed);
