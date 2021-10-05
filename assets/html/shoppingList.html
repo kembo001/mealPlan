@@ -16,23 +16,24 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Meal Planning</a>
+            <a class="navbar-brand" href="/projects/mealPlan/index.html">Meal Planning</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
     </header>
     <h1>Shopping List</h1>
+    <h1 id="emptyList">Cart is Empty :(</h1>
     <section id="shoppingListContainer">
-        <ul>
-
-        </ul>
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" id="numberOfItems">1</li>
+            <li class="list-group-item" id="nameOfItem">candy</li>
+            <li class="list-group-removeItem" id="removeItem"><button>x</button></li>
+          </ul>
+        <button id="saveItems">Save Items</button>
     </section>
 </body>
-<script src="script.js"></script>
-
+<!-- <script src="/projects/mealPlan/assets/js/script.js"></script> -->
+<script src="/projects/mealPlan/assets/js/shoppingList.js"></script>
 </html>
