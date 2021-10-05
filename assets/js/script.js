@@ -55,8 +55,14 @@ function getIngredientsApi(recipeId){
         return response.json();
     })
     .then(function (data) {
-        console.log(data);   
+        console.log(data);
+        for (i = 0; i < data.length; i++ ){
+            var  recipeList = $("<div>")
+            recipeList.text(data[i])
+            $("#recipeIngredients").append(recipeList)
+            } 
     })
+
 }
 
 
