@@ -52,6 +52,10 @@ function getRecipeApi(recipeId) {
             var recipeImage =
                 $(".selectedRecipe").prepend($('<img>', { id: 'theImg', src: data.image }));
             var recipeInstructions = $("<div>");
+            var instructionsUnparsed = JSON.stringify(data.instructions);
+            var instructionsParsed = JSON.parse(instructionsUnparsed);
+            console.log(instructionsUnparsed);
+            console.log(instructionsParsed);
             recipeInstructions.text(data.instructions);
             cardContainer.append(recipeInstructions);
 
