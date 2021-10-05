@@ -20,35 +20,32 @@ function getAPI() {
 function displayResults (data) {
     for( i = 0; i < 3; i++) {
     var resultsContainer = $(".searchResults")
-    var recipeResults = $("<button>")
+    var recipeResults = `<button class="recipe" value=${data.results[i].id}> ${data.results[i].title}</button>`
    
-    recipeResults.text(data.results[i].title)
     console.log(recipeResults)
     resultsContainer.append(recipeResults)
-    recipeResults.on('click', function(){
-        var recipeId = $(this).data.results[0].id;
-        console.log(recipeId)
-    
-    })
     }
-   
-    // getRecipe(recipeId);
+
+    $('.recipe').on('click', function(event){
+        var recipeId = event.target.value;
+        console.log(recipeId)
+        getRecipe(recipeId);
+    })
 }
 
 
 
-
-// function getRecipe(recipeId){
-//     var recipe = "https://api.spoonacular.com/recipes/"+recipeId+"/summary&apiKey=7422e4770d3c4bdbb9679e356fa65ecf"
-//     fetch(recipe)
-//     .then(function (response) {
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         console.log(data);
+function getRecipe(recipeId){
+    var recipe = "https://api.spoonacular.com/recipes/"+recipeId+"/summary&apiKey=7422e4770d3c4bdbb9679e356fa65ecf"
+    fetch(recipe)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
        
-//     })
-// }
+    })
+}
 
 
 confirmButton.on("click", function(){
