@@ -36,8 +36,18 @@ function displayResults (data) {
 
 
 function getRecipe(recipeId){
-    var recipe = "https://api.spoonacular.com/recipes/"+recipeId+"/summary&apiKey=7422e4770d3c4bdbb9679e356fa65ecf"
+    var recipe = "https://api.spoonacular.com/recipes/"+recipeId+"/information?&apiKey=7422e4770d3c4bdbb9679e356fa65ecf"
     fetch(recipe)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+       
+    })
+
+    var ingredients = "https://api.spoonacular.com/recipes/"+recipeId+"/ingredientWidget.json?&apiKey=7422e4770d3c4bdbb9679e356fa65ecf"
+    fetch(ingredients)
     .then(function (response) {
         return response.json();
     })
