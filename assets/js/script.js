@@ -17,6 +17,7 @@ function getAPI() {
 }
 
 function displayResults(data) {
+    $(".searchResults").empty();
     for (i = 0; i < 8; i++) {
         var resultsContainer = $(".searchResults")
         var recipeResults = `<button class="recipe" value=${data.results[i].id}> ${data.results[i].title}</button>`
@@ -43,9 +44,29 @@ function getRecipeApi(recipeId) {
         })
         .then(function(data) {
             console.log(data);
-        });
+            $(".selectedRecipe").empty()
+                var cardContainer = $(".selectedRecipe")
+                var recipeTitle = $("<div>")
+                recipeTitle.text(data.title)
+                cardContainer.append(recipeTitle)
+                var recipeImage;
+                var recipeInstructions = $("<div>")
+                recipeInstructions.text(data.instructions)
+                cardContainer.append(recipeInstructions)
+         });
 
 }
+
+// function getRecipeCard(data) {
+
+//     for (i = 0; i < data) {
+//     var cardContainer = $(".selectedRecipe")
+//     var recipeTitle = $("<div>")
+//     var recipeImage;
+//     var recipeInstructions = $("<div>")
+//     }
+
+// }
 
 function getIngredientsApi(recipeId) {
     var ingredients = "https://api.spoonacular.com/recipes/" + recipeId + "/ingredientWidget.json?&apiKey=7422e4770d3c4bdbb9679e356fa65ecf"
