@@ -8,6 +8,34 @@ h1 {
     font-family: 'Arial', sans-serif;
     color: #3C6F6C;
     opacity: 1;
-    padding: 40px;
+    margin: 30px;
     text-align: center;
+}
+
+button {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'Arial', sans-serif;
+    color: #3C6F6C;
+    border: none;
+    margin: 5px;
+}
+
+div {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+#saveItems {
+    margin: 40px;
+}
+
+a {
+    color: whitesmoke;
+}
+
+a:hover {
+    color: #3C6F6C;
 }

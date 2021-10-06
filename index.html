@@ -14,32 +14,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="./assets/html/shoppingList.html">Meal Planning</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./assets/html/shoppingList.html">Go To Shopping List <span class="sr-only">(current)</span></a>
-                </li>
-                <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown link
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li> -->
-            </ul>
-        </div>
-    </nav>
     <div id="box">
         <header>
             <h1 id="labelstyling">Seach Recipes</h1>
+            <a href="./assets/html/shoppingList.html">view shopping list</a>
         </header>
         <div id="searchbox">
             <section id="mainPage">
@@ -80,42 +58,27 @@
         </select>
                     <button class="cuisineConfirm">Confirm Selection</button>
                 </div>
-
-                <section id="searchresults" class="searchResults">
-                    <h3>Results</h3>
-                </section>
-                <div id="chosenrecipe">
-                    <section class="selectedRecipe">
-                        <h3>chosen recipe</h3>
-                        <!-- <button class="confirmRecipe">Confirm Recipe</button> -->
-                    </section>
+                <div>
+                    <div>
+                        <section id="searchresults" class="searchResults">
+                            <h3>Results</h3>
+                        </section>
+                        <div id="chosenrecipe">
+                            <section class="selectedRecipe">
+                                <h3>chosen recipe</h3>
+                            </section>
+                        </div>
+                        <div id="recipeIngredients">
+                            <section>
+                                <h3>Recipe Ingredients</h3>
+                                <ul id="ingredientsList"></ul>
+                                <button class="addIngredientBtn">Add Ingredients</button>
+                                <a href="./assets/html/shoppingList.html">view shopping list</a>
+                            </section>
+                        </div>
+                    </div>
                 </div>
-                <div id="recipeIngredients">
-                    <section>
-                        <h3>Recipe Ingredients</h3>
-                        <ul id="ingredientsList"></ul>
-                        <button class="addIngredientBtn">Add Ingredients</button>
-                    </section>
-                </div>
-        </div>
-    </div>
-    <!-- <form class="foodSearch" action="">
-        <input type="text"
-        placeholder="Food Search" name="search">
-        <button class="submitButton" type="submit">Submit</button>
-    </form>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li> -->
 
-    </section>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
