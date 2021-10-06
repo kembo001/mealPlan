@@ -57,7 +57,7 @@ function getRecipeApi(recipeId) {
             var instructionsParsed = JSON.parse(instructionsUnparsed);
             console.log(instructionsUnparsed);
             console.log(instructionsParsed);
-            recipeInstructions.text(data.instructions);
+            recipeInstructions.html(data.instructions);
             cardContainer.append(recipeInstructions);
 
         });
