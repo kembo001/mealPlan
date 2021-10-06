@@ -18,6 +18,7 @@ var saveItems = document.getElementById("saveItems");
 var cart = document.getElementById("shoppingListContainer")
 
 cart.style.visibility = 'hidden';
+saveItems.style.visibility = 'hidden'
 
 saveItems.addEventListener('click', function(){
     console.log('saved')
@@ -51,7 +52,6 @@ nameArray = food
 // render Item function
 // --------------------------------
 function renderItems(){
-    shoppingList.innerHTML= ""
     for(i=0; i<nameArray.length; i++){
         var row = document.createElement("div");
         row.setAttribute("class", "row");
@@ -70,14 +70,7 @@ function renderItems(){
         newButton.addEventListener('click', function(event){
             console.log(event.target.dataset.itemIdx)
             var selectedItem = parseInt(event.target.dataset.itemIdx);
-            //  nameArray.splice(selectedItem, 1);
-            // nameArray.push(removeItem)
-            // console.log(nameArray)
-            // row.remove(selectedItem)
-            
-            if(nameArray.splice(selectedItem, 1)){
-                renderItems()
-            }
+            nameArray.splice(selectedItem, 1);
         })
         col1.textContent = i;
         col2.textContent = nameArray[i];
@@ -98,6 +91,7 @@ function renderItems(){
 function shoppingCart(){
     emptyListText.style.visibility = 'hidden';
     cart.style.visibility = 'visible';
+    saveItems.style.visibility = 'visible'
     renderItems()
 }
 
@@ -117,4 +111,3 @@ function resetCart(){
 
 // execute Function
 shoppingCart()
-
