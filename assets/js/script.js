@@ -1,5 +1,6 @@
 var confirmButton = $(".cuisineConfirm")
 var cuisineSelection;
+var ingredientsBtn = $('.addIngredientBtn')
 
 
 
@@ -63,21 +64,29 @@ function getRecipeApi(recipeId) {
         });
 
 };
+var allTheIngredients = JSON.parse(localStorage.getItem("allTheIngredients")) || [];
 
 function getIngredientsApi(recipeId) {
-    var ingredients = "https://api.spoonacular.com/recipes/" + recipeId + "/ingredientWidget.json?&apiKey=7422e4770d3c4bdbb9679e356fa65ecf"
-    fetch(ingredients)
+    var ingredientsURL = "https://api.spoonacular.com/recipes/" + recipeId + "/ingredientWidget.json?&apiKey=7422e4770d3c4bdbb9679e356fa65ecf"
+    fetch(ingredientsURL)
         .then(function(response) {
             return response.json();
         })
         .then(function(data) {
             console.log(data);
-            $("#recipeIngredients").empty();
+            $("#ingredientsList").empty();
             for (i = 0; i < data.ingredients.length; i++) {
                 var recipeList = $("<div>");
-                console.log(data.ingredients[i].name);
-                recipeList.text(data.ingredients[i].name);
-                $("#recipeIngredients").append(recipeList);
+                var ingredients = data.ingredients[i].name;
+                allTheIngredients.push(ingredients);
+                console.log(allTheIngredients);
+                // console.log(data.ingredients[i].name);
+                recipeList.text(ingredients);
+                $("#ingredientsList").append(recipeList);
+                
+                ingredientsBtn.on('click', function(){
+                    localStorage.setItem('Ingredients', JSON.stringify(allTheIngredients));
+            })
             }
         });
 
