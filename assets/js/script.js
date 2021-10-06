@@ -19,7 +19,9 @@ function getAPI() {
 
 function displayResults(data) {
     $(".searchResults").empty();
-    for (i = 0; i < 8; i++) {
+    console.log(data.results.length);
+    for (i = 0; i < data.results.length; i++) {
+        
         var resultsContainer = $(".searchResults")
         var recipeResults = `<button class="recipe" value=${data.results[i].id}> ${data.results[i].title}</button>`
 
