@@ -6,7 +6,7 @@ var saveOfItem = document.getElementById("nameOfItem");
 var shoppingList = document.getElementById("shoppingListContainer");
 
 // var nameArray = ["tea", "milk","beans"];
-var nameArray = []
+var nameArray = ["great"]
 var setCart = [];
 var getIngredientsForCart = localStorage.getItem
 if(localStorage.getItem("cart")){
@@ -22,12 +22,11 @@ cart.style.visibility = 'hidden';
 saveItems.addEventListener('click', function(){
     console.log('saved')
         var entry ={
-            "name": saveOfItem,
-            "Numberofitems":numberOfItems
+            // nameArray
         };
         setCart.push(entry);
         localStorage.setItem('cart', JSON.stringify(setCart));
-        resetCart()
+        // resetCart()
 });
 
 
@@ -52,6 +51,7 @@ nameArray = food
 // render Item function
 // --------------------------------
 function renderItems(){
+    shoppingList.innerHTML= ""
     for(i=0; i<nameArray.length; i++){
         var row = document.createElement("div");
         row.setAttribute("class", "row");
@@ -67,10 +67,17 @@ function renderItems(){
         var newButton = document.createElement('button');
         newButton.textContent = 'X';
         newButton.setAttribute("data-item-idx", i);
-        newButton.addEventListener('click', function(){
-            var selectedItem = this.row;
-            nameArray.splice(selectedItem, 1)
-            console.log("hello")
+        newButton.addEventListener('click', function(event){
+            console.log(event.target.dataset.itemIdx)
+            var selectedItem = parseInt(event.target.dataset.itemIdx);
+            //  nameArray.splice(selectedItem, 1);
+            // nameArray.push(removeItem)
+            // console.log(nameArray)
+            // row.remove(selectedItem)
+            
+            if(nameArray.splice(selectedItem, 1)){
+                renderItems()
+            }
         })
         col1.textContent = i;
         col2.textContent = nameArray[i];
@@ -109,5 +116,5 @@ function resetCart(){
 
 
 // execute Function
-
 shoppingCart()
+
