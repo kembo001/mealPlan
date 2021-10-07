@@ -24,7 +24,7 @@ saveItems.style.visibility = 'hidden'
 
 saveItems.addEventListener('click', function(){
     console.log('saved')
-    localStorage.setItem('cart', JSON.stringify(nameArray));
+    localStorage.setItem('Ingredients', JSON.stringify(nameArray));
 });
 
 
@@ -84,8 +84,8 @@ function renderItems() {
 // shopping Cart function
 // --------------------------------
 function shoppingCart() {
-    if(localStorage.getItem("cart")){
-        nameArray = JSON.parse(localStorage.getItem("cart"))
+    if(localStorage.getItem("Ingredients")){
+        nameArray = JSON.parse(localStorage.getItem("Ingredients"))
     }
     emptyListText.style.visibility = 'hidden';
     cart.style.visibility = 'visible';
