@@ -1,12 +1,10 @@
 //  selectors 
-// var numberOfItems = document.getElementById("numberOfItems").innerHTML;
-var nameOfItem = document.getElementById("nameOfItem");
-var saveOfItem = document.getElementById("nameOfItem");
+
 
 var shoppingList = document.getElementById("shoppingListContainer");
 
-// var nameArray = ["tea", "milk","beans"];
-var nameArray = ["great"]
+
+var nameArray = []
 var setCart = [];
 var getIngredientsForCart = localStorage.getItem
 if (localStorage.getItem("cart")) {
@@ -14,30 +12,20 @@ if (localStorage.getItem("cart")) {
 }
 var emptyListText = document.getElementById("emptyList")
 var removeButton = document.getElementById('removeItem');
+
+// --------------------------------
+// save Item function
+// --------------------------------
 var saveItems = document.getElementById("saveItems");
 var cart = document.getElementById("shoppingListContainer")
 
 cart.style.visibility = 'hidden';
 saveItems.style.visibility = 'hidden'
 
-saveItems.addEventListener('click', function() {
+saveItems.addEventListener('click', function(){
     console.log('saved')
-    var entry = {
-        // nameArray
-    };
-    setCart.push(entry);
-    localStorage.setItem('cart', JSON.stringify(setCart));
-    // resetCart()
+    localStorage.setItem('cart', JSON.stringify(nameArray));
 });
-
-
-/*
-
-<li class="list-group-item" id="numberOfItems">1</li>
-            <li class="list-group-item" id="nameOfItem"></li>
-            <li class="list-group-item" id="removeItem"></li>
-
-*/
 
 
 
@@ -52,6 +40,7 @@ nameArray = food
 // render Item function
 // --------------------------------
 function renderItems() {
+    shoppingList.innerHTML = "";
     for (i = 0; i < nameArray.length; i++) {
         var row = document.createElement("div");
         row.setAttribute("class", "row");
@@ -67,11 +56,17 @@ function renderItems() {
         var newButton = document.createElement('button');
         newButton.textContent = 'Delete';
         newButton.setAttribute("data-item-idx", i);
-        newButton.addEventListener('click', function(event) {
+        newButton.addEventListener('click', function(event){
             console.log(event.target.dataset.itemIdx)
             var selectedItem = parseInt(event.target.dataset.itemIdx);
-            nameArray.splice(selectedItem, 1);
+            
+            
+            if(nameArray.splice(selectedItem, 1)){
+                console.log(nameArray)
+                renderItems()
+            }
         })
+        
 
         col2.textContent = nameArray[i];
         col3.appendChild(newButton);
@@ -89,6 +84,9 @@ function renderItems() {
 // shopping Cart function
 // --------------------------------
 function shoppingCart() {
+    if(localStorage.getItem("cart")){
+        nameArray = JSON.parse(localStorage.getItem("cart"))
+    }
     emptyListText.style.visibility = 'hidden';
     cart.style.visibility = 'visible';
     saveItems.style.visibility = 'visible'
@@ -97,16 +95,6 @@ function shoppingCart() {
 
 
 
-// -------------------------------
-// reset cart function
-// -------------------------------
-function resetCart() {
-
-}
-
-// create an event listener on the parenr element of all delete buttons
-// the button clicked on will have a data attribute for the index of the item being removed
-// delete that item from the array
 
 
 // execute Function
